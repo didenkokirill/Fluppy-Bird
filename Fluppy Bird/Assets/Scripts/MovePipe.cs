@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MovePipe : MonoBehaviour
 {
-    public float speed = 0.01f;
+    public float speed = 1f;
     [SerializeField] private float lifeTime = 0;
 
     private void Start()
@@ -12,6 +12,6 @@ public class MovePipe : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(-Time.deltaTime, 0, 0, Camera.main.transform);
+        transform.Translate(-Time.deltaTime * speed, 0, 0, Camera.main.transform);
     }
 }
