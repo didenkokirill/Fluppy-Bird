@@ -3,26 +3,32 @@ using TMPro;
 
 public class PointCollecting : MonoBehaviour
 {
-    [SerializeField] private TMP_Text Score;
-    [SerializeField] private TMP_Text BestScore;
-    [SerializeField] private int bestScore = PlayerPrefs.GetInt("BestScore");
-    [SerializeField] private int score = 0;
+    [SerializeField] private TMP_Text CurrentScore;
+    [SerializeField] private TMP_Text BestScore;  
+    [SerializeField] private int currentScore = 0;
 
-    void Awake()
+    private void Awake()
     {
-        BestScore.text = "BestScore: " + bestScore.ToString();
+        if (!PlayerPrefs.HasKey("BestScore"))
+        {
+            bestScore = 0;
+            PlayerPrefs.Save();
+        }
+        BestScore.text = "Best Score: " + bestScore.ToString();
     }
+    [SerializeField] private int bestScore = PlayerPrefs.GetInt("BestScore");
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Point"))
         {
-            score++;
-            Score.text = "Score: " + score.ToString();
-            if (score > bestScore)
+            currentScore++;
+            CurrentScore.text = "Current Score: " + currentScore.ToString();
+            if (currentScore > bestScore)
             {
-                bestScore = score;
-                PlayerPrefs.SetInt("BestScore", bestScore);
+                bestScore=currentScore;
+                BestScore.text = "Best Score: " + bestScore.ToString();
+                PlayerPrefs.SetInt("BestScore", bestScore) ; PlayerPrefs.Save();
             }
         }
     }
