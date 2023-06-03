@@ -311,11 +311,11 @@ RectTransform:
   m_Father: {fileID: 1519637275}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -470, y: 491}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 95, y: 6}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!114 &747610482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -760,10 +760,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c7b7c69a0436f4dabd0c1f0f3f5abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentScore: {fileID: 747610482}
-  BestScore: {fileID: 2042022426}
-  currentScore: 0
-  bestScore: 0
 --- !u!1 &1519637271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,8 +1044,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1799606004}
   - component: {fileID: 1799606005}
+  - component: {fileID: 1799606006}
   m_Layer: 0
-  m_Name: Scene Manager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1084,6 +1081,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paused: 0
   playing: 0
+--- !u!114 &1799606006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799606002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e48c7d2ccdd39f40a57da6d7b895e9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScoreText: {fileID: 747610482}
+  bestScoreText: {fileID: 2042022426}
+  currentScore: 0
+  bestScore: 0
 --- !u!1 &2042022424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,11 +1130,11 @@ RectTransform:
   m_Father: {fileID: 1519637275}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -473, y: -484}
-  m_SizeDelta: {x: 96.139, y: 6}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 96.13898, y: 6}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &2042022426
 MonoBehaviour:
   m_ObjectHideFlags: 0
